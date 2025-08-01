@@ -15,10 +15,6 @@ This project explores the connection between modern worship music and the Book o
   - [6. Thematic Similarity](#6-thematic-similarity)
 - [Findings](#findings)
 - [Tech Stack](#tech-stack)
-- [How to Run](#how-to-run)
-- [Future Work](#future-work)
-- [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
 
 ---
 
@@ -26,13 +22,12 @@ This project explores the connection between modern worship music and the Book o
 
 How closely do modern worship songs reflect the language, tone, and theology of the Psalms? I have always heard Christians criticize modern worship songs, yet they lacked an objective way to compare and contrast the linguistic structure between scripture and the songs.
 
-To answer this, I used Stanford NLP and other Python tools to perform lexical and semantic analysis across the top 100 CCLI songs and compared them to the full text of the Psalms. This project is part of a submission to the Jerry Falwell Library Research Week competition. My team finsihed 3rd for the Theoretical category.
+To answer this, I joined a team of four to use Stanford NLP and other Python tools to perform lexical and semantic analysis across the **top 100 CCLI songs** and compared them to the full text of **the Psalms**. This project is part of a submission to the Jerry Falwell Library Research Week competition, and my team placed **3rd** for the Textual/Investigative Undergraduate Poster.
 
 ---
 
 ## 🎯 Objectives
 
-- Identify which Psalms align most closely with modern worship songs
 - Measure sentiment and emotional tones in lyrics vs. Psalms
 - Explore repetition and grammatical structure in songwriting
 - Analyze theological language patterns (e.g., use of names for God, themes of suffering, joy, justice)
@@ -41,67 +36,57 @@ To answer this, I used Stanford NLP and other Python tools to perform lexical an
 
 ## 📂 Dataset
 
-- **Top 100 CCLI Worship Songs** (cleaned and formatted)
-- **Book of Psalms** (KJV and NIV versions, depending on analysis)
-- All text processed and stored in `.txt` or `.csv` format
+- **Top 100 CCLI Worship Songs**
+- **Book of Psalms** (ESV)
+- All texts were processed and stored in `.txt` format. 
 
 ---
 
 ## 🔬 Methods
+- Retrieved all the data and removed any unnecessary text (e.g., Song titles, Scripture Chapter headers)
+- "Boiled" down the text using each method and output results in `.json` files
+- Use Matplotlib, Seaborn, and other libraries to perform analysis
+### 1. Sentiment Analysis
+- Assess the emotional tone and diversity of sentiment in both datasets.
 
-### 1. 📈 Sentiment Analysis
-- Used `TextBlob` and `VADER` to score the emotional tone of each lyric and psalm
-- Compared distributions of positive/neutral/negative sentiment
+### 2. Named Entity Recognition
+- Compare how often and in what way both the Psalms and CCLI songs refer to theological entities.
 
-### 2. 🧍 Named Entity Recognition
-- Extracted theological references (e.g., “Jesus,” “Lord,” “King”) using SpaCy and Stanford NLP
-- Tracked frequency and variety of divine names
+### 3. Parts of Speech Tagging
+- Analyze the grammatical structure of lyrics to assess complexity and the roles of different parts of speech. 
 
-### 3. ✍️ POS Tagging
-- Analyzed grammatical structure across songs and Psalms
-- Compared verb tense usage, pronoun choices (e.g., "I" vs. "You" in worship)
+### 4. Repetitiveness
+- Identify repetitive phrases or concepts in both datasets. 
 
-### 4. 🔁 Repetitiveness
-- Measured word frequency, chorus reuse, and lexical redundancy in worship lyrics
-- Compared to literary repetitiveness in Psalms (e.g., poetic parallelism)
+### 5. Coreference Resolution
+- Explore how consistently both the Psalms and CCLI songs refer to God or theological entities, such as whether CCLI songs focus predominantly on personal or relational language (e.g., “You” or “He”) versus the formal references in the Psalms.
 
-### 5. 🔗 Coreference Resolution
-- Resolved pronouns like “He,” “You,” and “His” to understand who is being referenced
-- Useful for evaluating personal vs. communal tone
-
-### 6. 🔍 Thematic Similarity
-- Vectorized each song and psalm using `TF-IDF` and `cosine similarity`
-- Matched each song to the top 3 most similar Psalms
+### 6. Lexical Analysis
+- Compare the diversity and richness of vocabulary used in the Psalms versus CCLI songs
 
 ---
 
 ## 📊 Findings
-
-> **Sample insights:**
-- 87% of songs showed closest similarity to Psalms of thanksgiving or praise
-- Repetition in CCLI lyrics is 2.3x higher than in Psalms (on average)
-- Songs heavily use second-person pronouns ("You") while Psalms more often balance between "I", "You", and "He"
-- Sentiment in worship songs is overwhelmingly positive, whereas Psalms include a broader emotional spectrum
-
-(See `/results` folder or `findings.pdf` for full report)
+We found that the Psalms have:
+1) Higher lexical diversity.
+- Lexical Analysis: On average, scripture had a higher text-to-token ratio
+- Part of Speech Tagging: The Psalms had a higher frequency of prepositions and punctuation, aligning with more formal clause-rich statements, while CCLI Songs focused more on Direct Personal Pronouns. 
+2) A wider range of sentiments, including emotions such as fear and anger
+- Sentiment Analysis: Word clouds unveiled that songs employ more positive emotions such as love and grace, while scripture has a more balanced display of emotions, referencing the judgement and justice of God.
+3) More references to God with richer descriptions of who he is
+- N-Grams Analysis: Modern songs tend to focus more on the individual experiences, while the Psalms direct the reader to God.
+- Coreference Resolution and Name Entity Recognition: Both methods showed that the Psalms explore more vivid attributes of God and historical references.
+  
+(See `Poster.pdf` for full report)
 
 ---
 
 ## 🛠 Tech Stack
 
 - Python 3.10
-- `pandas`, `nltk`, `spacy`, `textblob`, `scikit-learn`
-- Stanford CoreNLP (via server)
+- Stanford CoreNLP 
 - Jupyter Notebook
-- Matplotlib / Seaborn (for visualization)
+- Matplotlib / Seaborn 
 
 ---
-
-## 🏁 How to Run
-
-1. Clone the repo:
-```bash
-git clone https://github.com/yourusername/psalms-ccli-nlp.git
-cd psalms-ccli-nlp
-
 
