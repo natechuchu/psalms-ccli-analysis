@@ -68,16 +68,16 @@ To answer this, I joined a team of four to use Stanford NLP and other Python too
 
 ## 📊 Findings
 We found that the Psalms have:
-**1) Higher lexical diversity.**
+1) Higher lexical diversity.
   - Lexical Analysis: On average, scripture had a higher text-to-token ratio
   - Part of Speech Tagging: The Psalms had a higher frequency of prepositions and punctuation, aligning with more formal clause-rich statements, while CCLI Songs focused more on Direct Personal Pronouns. 
-**2) A wider range of sentiments, including emotions such as fear and anger**
+2) A wider range of sentiments, including emotions such as fear and anger
   - Sentiment Analysis: Word clouds unveiled that songs employ more positive emotions such as love and grace, while scripture has a more balanced display of emotions, referencing the judgement and justice of God.
-**3) More references to God with richer descriptions of who he is**
+3) More references to God with richer descriptions of who he is
   - N-Grams Analysis: Modern songs tend to focus more on the individual experiences, while the Psalms direct the reader to God.
   - Coreference Resolution and Name Entity Recognition: Both methods showed that the Psalms explore more vivid attributes of God and historical references.
   
-(See `Psalm-CCLI Analysis RW Poster.pdf for full report)
+(See `Psalm-CCLI Analysis RW Poster.pdf` for full report)
 
 ---
 
