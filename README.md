@@ -68,7 +68,7 @@ To answer this, I joined a team of four to use Stanford NLP and other Python too
 
 ## 📊 Findings
 We found that the Psalms have:
-1) Higher lexical diversity.
+1) Higher lexical diversity
   - Lexical Analysis: On average, scripture had a higher text-to-token ratio
   - Part of Speech Tagging: The Psalms had a higher frequency of prepositions and punctuation, aligning with more formal clause-rich statements, while CCLI Songs focused more on Direct Personal Pronouns. 
 2) A wider range of sentiments, including emotions such as fear and anger
